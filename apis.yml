@@ -2,7 +2,7 @@ aid: central-garden-and-pet
 url: https://raw.githubusercontent.com/api-evangelist/central-garden-and-pet/refs/heads/main/apis.yml
 name: Central Garden and Pet
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Pet Products
   - Garden
@@ -19,7 +19,7 @@ apis:
       - Pet Products
       - Garden
       - Consumer
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.central.com
     humanURL: https://developer.central.com
     properties:
