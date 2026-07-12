@@ -28,6 +28,8 @@ apis:
     description: >-
       The Central Garden and Pet API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: DomainSecurity
+    url: security/central-garden-and-pet-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/central-garden-and-pet
   - type: Website
