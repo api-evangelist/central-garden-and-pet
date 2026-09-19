@@ -30,33 +30,78 @@ tags:
   - Pet Products
   - Garden
   - Consumer
+  - Consumer Goods
+  - Lawn and Garden
+  - Pet Supplies
+  - Distribution
+  - Manufacturing
 description: >-
-  Central Garden and Pet is a major US corporation and Fortune 1000 company. The Central Garden and Pet API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+  Central Garden & Pet Company (Nasdaq: CENT, CENTA) is a Walnut Creek, California manufacturer and distributor of
+  branded pet supplies and lawn & garden products — Nylabone, Kaytee, Aqueon, Four Paws, Farnam, Pennington, Amdro,
+  Sevin and Ferry-Morse among roughly seventy brands — with its own nationwide pet and garden distribution
+  network. It is a consumer-products company, not a software company: it
+  publishes no developer portal, public API, SDK, package, OpenAPI, AsyncAPI, GraphQL, MCP server, A2A agent card or
+  llms.txt, and retailer and distributor connectivity is EDI through E2open under private contract. The host
+  developer.central.com once recorded here does not resolve, and api.central.com, on Central's own network block,
+  serves only a 2015-era IIS placeholder page, so no API entry is carried. On the horizontal regulatory layer its
+  privacy notice states the Global Privacy Control signal is honored and links a OneTrust portal for CCPA and GDPR
+  data subject requests.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-09-19'
 specificationVersion: '0.23'
-apis:
-  - aid: central-garden-and-pet:central-garden-and-pet-api
-    name: Central Garden and Pet API
-    tags:
-      - Pet Products
-      - Garden
-      - Consumer
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.central.com
-    humanURL: https://developer.central.com
-    properties:
-      - url: https://developer.central.com/docs
-        type: Documentation
-    description: >-
-      The Central Garden and Pet API provides access to platform services and data for enterprise integration and automation.
+apis: []
 common:
-  - type: DomainSecurity
-    url: security/central-garden-and-pet-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/central-garden-and-pet
   - type: Website
     url: https://www.central.com
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/central-garden-and-pet
+  - type: Instagram
+    url: https://www.instagram.com/centralgardenandpet/
+  - type: PrivacyPolicy
+    url: https://www.central.com/central-privacy-policy
+  - type: TermsOfService
+    url: https://www.central.com/terms-of-use
+  - type: Newsroom
+    url: https://ir.central.com/news-events/press-releases
+  - type: Leadership
+    url: https://www.central.com/about-us/leadership-team
+  - type: Investors
+    url: https://ir.central.com/
+  - type: ContactUs
+    url: https://www.central.com/contact-us
+  - type: Careers
+    url: https://centralgardenandpet.ttcportals.com/search/jobs
+  - type: DomainSecurity
+    url: security/central-garden-and-pet-domain-security.yml
+  - type: GlobalPrivacyControl
+    url: regulatory/central-garden-and-pet-regulatory-posture.yml
+  - type: DataSubjectRequest
+    url: regulatory/central-garden-and-pet-regulatory-posture.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-19'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Central Garden & Pet is a pet-supplies and lawn & garden manufacturer/distributor whose retailer connectivity is
+    private EDI via E2open; the developer.central.com host this profile once recorded is NXDOMAIN, api.central.com
+    serves a 39-byte IIS "Hello" placeholder last modified 2015-02-27 with every other path a stock 404, and the
+    101-URL sitemap of www.central.com contains no developer, API, docs or pricing page.
+  evidence:
+    - url: https://api.central.com/
+      status: 200
+    - url: https://api.central.com/openapi.json
+      status: 404
+    - url: https://developer.central.com/
+      status: 0
+    - url: https://www.central.com/.well-known/security.txt
+      status: 302
+    - url: https://www.central.com/sitemap.xml
+      status: 200
+  checked: '2026-09-19'

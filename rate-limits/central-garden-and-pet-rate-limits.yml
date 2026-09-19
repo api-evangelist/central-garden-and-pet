@@ -4,33 +4,27 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Central Garden and Pet
 providerId: central-garden-and-pet
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+modified: '2026-09-19'
+generated: '2026-09-19'
+method: searched
+source: https://www.central.com/sitemap.xml
+reconciled: true
 tags:
   - Pet Products
   - Garden
   - Consumer
   - Rate Limiting
-description: Central Garden & Pet does not publish a public developer portal or rate-limit documentation.
-  Any throttling applied to retailer / distributor integrations is configured privately and not externally
-  visible.
-notes: No public rate-limit documentation. Numeric defaults removed.
+description: >-
+  Central Garden & Pet publishes no public API and therefore no rate-limit documentation, response headers or
+  throttling status codes. Nothing on central.com (101-URL sitemap, probed 2026-09-19) describes an API, and
+  api.central.com serves only an IIS placeholder page. The earlier placeholder limits and 429 policy written by the
+  2026-05-04 bulk sweep have been removed as they described a surface that does not exist.
+limit_count: 0
+limits: []
+headers: []
+notes: No published limits. Any retailer/distributor EDI throughput is governed by private contract via E2open.
 sources:
-  - https://www.central.com
-responseCodes:
-  throttled: 429
-limits:
-  - name: Partner-negotiated limits
-    scope: contract
-    metric: varies
-    limit: see partner agreement
-policies:
-  - name: Backoff
-    description: Implement exponential backoff with jitter and honor Retry-After if surfaced by Central
-      Garden & Pet's integration gateway.
+  - https://www.central.com/sitemap.xml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

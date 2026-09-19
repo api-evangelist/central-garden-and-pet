@@ -1,44 +1,29 @@
 specification: API Commons Plans
 specificationVersion: '0.1'
-schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
 provider: Central Garden and Pet
 providerId: central-garden-and-pet
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+modified: '2026-09-19'
+generated: '2026-09-19'
+method: searched
+source: https://www.central.com/sitemap.xml
+reconciled: true
 tags:
   - Pet Products
   - Garden
   - Consumer
-description: Central Garden & Pet is a CPG manufacturer / distributor for pet and lawn / garden categories.
-  No public developer portal or API pricing page is published; the developer.central.com host referenced
-  in apis.yml does not resolve. Any retailer / distributor / EDI integration is contracted privately.
-notes: No public API pricing. Single placeholder plan; replace if Central Garden & Pet publishes a developer
-  portal or partner pricing schedule.
+description: >-
+  Central Garden & Pet publishes no API plans or pricing. It is a consumer-products manufacturer and distributor
+  (pet supplies and lawn & garden); its retailer and distributor connectivity is EDI through E2open and privately
+  contracted, and no developer portal, API product or pricing page exists anywhere on central.com. The full
+  sitemap (101 URLs, probed 2026-09-19) lists only corporate, brand, careers, investor and legal pages.
+  The earlier placeholder "partner" plan written by the 2026-05-04 bulk sweep has been removed.
+plan_count: 0
+plans: []
+notes: No published plans. developer.central.com does not resolve; api.central.com serves an IIS placeholder page.
 sources:
-  - https://www.central.com
-plans:
-  - id: central-garden-and-pet-partner
-    name: Retailer / Distributor Integration (Contact Sales)
-    type: enterprise
-    description: Privately negotiated retailer / distributor / EDI / B2B integration access.
-    entries:
-      - label: Partner integration access
-        name: partner_access
-        type: subscription
-        metric: contract
-        limit: -1
-        timeFrame: month
-        geo: US
-        unit: 1
-        price: contact sales
-        userMultiplied: false
-    elements:
-      - name: EDI / B2B integration
-      - name: Central Garden and Pet API
+  - https://www.central.com/sitemap.xml
+  - https://www.central.com/distribution
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

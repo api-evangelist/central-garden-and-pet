@@ -1,0 +1,120 @@
+generated: '2026-09-19'
+method: probed
+source: live GET of /.well-known/* on every host the record knows (www.central.com, central.com, api.central.com, developer.central.com)
+note: >-
+  No /.well-known/ document is served on any Central Garden & Pet host. www.central.com (Sitecore) answers every
+  unknown path with a 302 to /404-not-found, a soft-404 HTML page, so those 302s are recorded as misses. api.central.com
+  is an IIS 10 host on Central's own ARIN block (NetName CGP-53) whose root serves a 39-byte "Hello" page last modified
+  2015-02-27 and whose every other path is a stock IIS 404. developer.central.com does not resolve (NXDOMAIN). The apex
+  central.com 301s every path to www. No WellKnown or SecurityTxt pointer is emitted because nothing was served.
+hosts:
+  - host: www.central.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 302
+        file: null
+        note: 302 to https://www.central.com/404-not-found (soft-404)
+      - path: /.well-known/openid-configuration
+        status: 302
+        file: null
+        note: 302 to /404-not-found (soft-404)
+      - path: /.well-known/oauth-authorization-server
+        status: 302
+        file: null
+        note: 302 to /404-not-found (soft-404)
+      - path: /.well-known/oauth-protected-resource
+        status: 302
+        file: null
+        note: 302 to /404-not-found (soft-404)
+      - path: /.well-known/api-catalog
+        status: 302
+        file: null
+        note: 302 to /404-not-found (soft-404)
+      - path: /.well-known/ai-plugin.json
+        status: 302
+        file: null
+        note: 302 to /404-not-found (soft-404)
+      - path: /.well-known/agent-card.json
+        status: 302
+        file: null
+        note: 302 to /404-not-found (soft-404)
+      - path: /.well-known/agent.json
+        status: 302
+        file: null
+        note: 302 to /404-not-found (soft-404)
+      - path: /security.txt
+        status: 302
+        file: null
+        note: 302 to /404-not-found (soft-404)
+      - path: /llms.txt
+        status: 302
+        file: null
+        note: 302 to /404-not-found (soft-404)
+  - host: central.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+        file: null
+        note: apex 301s every path to https://www.central.com/ (see www.central.com)
+      - path: /.well-known/openid-configuration
+        status: 301
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 301
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 301
+        file: null
+      - path: /.well-known/api-catalog
+        status: 301
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 301
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 301
+        file: null
+      - path: /.well-known/agent.json
+        status: 301
+        file: null
+  - host: api.central.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /openapi.json
+        status: 404
+        file: null
+      - path: /swagger.json
+        status: 404
+        file: null
+      - path: /llms.txt
+        status: 404
+        file: null
+  - host: developer.central.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        file: null
+        note: host does not resolve (NXDOMAIN); no probe possible

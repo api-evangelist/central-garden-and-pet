@@ -1,0 +1,54 @@
+generated: '2026-09-19'
+method: searched
+probe: true
+source: https://www.central.com/central-privacy-policy
+note: >-
+  Harvested from Central Garden & Pet's public privacy notice (Last Updated January 13, 2023) and the conventional
+  paths probed live on www.central.com. Two signals are published: a statement that the Global Privacy Control browser
+  signal is honored as a sale/sharing opt-out, and a OneTrust privacy-request portal (two webforms, CCPA and GDPR) for
+  data subject requests. /accessibility, /legal/subprocessors, /transparency, /trust and /security all 302 to the site's
+  soft-404 page; no SBOM, VPAT, subprocessor list, DPA, data-residency, incident-SLA, age-assurance, notice-and-action,
+  transparency-report or exit-assistance page was found. Which regimes apply is not decided here.
+signals:
+  global_privacy_control:
+    honored: true
+    url: https://www.central.com/central-privacy-policy
+    statement: >-
+      "You can opt-out of being tracked by these third parties by clicking "Do Not Sell My Personal Information" link
+      at the bottom of our website and selecting your preferences, or by broadcasting the global privacy control signal."
+    evidence:
+      - source: https://www.central.com/central-privacy-policy
+        status: 200
+        keywords: [global privacy control, Do Not Sell]
+  data_subject_request:
+    url: https://www.central.com/central-privacy-policy
+    forms:
+      - jurisdiction: California (CCPA/CPRA)
+        url: https://privacyportal.onetrust.com/webform/26b8d963-03f2-4989-a143-3c9be6ab7533/71464059-a65c-4f7b-a284-f27a28285ed3
+        status: 200
+      - jurisdiction: EU/EEA (GDPR)
+        url: https://privacyportal.onetrust.com/webform/26b8d963-03f2-4989-a143-3c9be6ab7533/999d69b1-94f7-4bc0-a9da-c1b2bbe1156b
+        status: 200
+    evidence:
+      - source: https://www.central.com/central-privacy-policy
+        status: 200
+        keywords: [submit a request, GDPR, California resident]
+probed:
+  - url: https://www.central.com/accessibility
+    status: 302
+    note: soft-404 (/404-not-found)
+  - url: https://www.central.com/legal/subprocessors
+    status: 302
+    note: soft-404
+  - url: https://www.central.com/transparency
+    status: 302
+    note: soft-404
+  - url: https://www.central.com/trust
+    status: 302
+    note: soft-404
+  - url: https://www.central.com/security
+    status: 302
+    note: soft-404
+  - url: https://www.central.com/about-us/policies-practices
+    status: 200
+    note: ethics, health & safety, supply-chain transparency and modern-slavery statements only — none of the signals above
